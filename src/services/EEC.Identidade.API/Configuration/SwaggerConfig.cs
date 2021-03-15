@@ -28,7 +28,7 @@ namespace EEC.Identidade.API.Configuration
             return services;
         }
 
-        public static IApplicationBuilder AddSwaggerConfiguration(this IApplicationBuilder app)
+        public static IApplicationBuilder UseSwaggerConfiguration(this IApplicationBuilder app)
         {
             app.UseSwagger();
             app.UseSwaggerUI(c =>

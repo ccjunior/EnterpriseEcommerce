@@ -38,9 +38,9 @@ namespace EEC.Identidade.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.AddSwaggerConfiguration();
+            app.UseSwaggerConfiguration();
 
-            app.AddApiConfiguration(env);
+            app.UseApiConfiguration(env);
         }
     }
 }

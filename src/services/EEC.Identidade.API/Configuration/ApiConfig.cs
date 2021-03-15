@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using EEC.WebApi.Core.Identidade;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EEC.Identidade.API.Configuration
 {
@@ -18,7 +15,7 @@ namespace EEC.Identidade.API.Configuration
             return services;
         }
 
-        public static IApplicationBuilder AddApiConfiguration(this IApplicationBuilder app, IWebHostEnvironment env)
+        public static IApplicationBuilder UseApiConfiguration(this IApplicationBuilder app, IWebHostEnvironment env)
         {
 
             if (env.IsDevelopment())
@@ -30,7 +27,7 @@ namespace EEC.Identidade.API.Configuration
 
             app.UseRouting();
 
-            app.UserIdentityConfiguration();
+            app.UseAuthConfiguration();
 
             app.UseEndpoints(endpoints =>
             {

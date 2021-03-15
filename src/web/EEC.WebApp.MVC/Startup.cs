@@ -33,7 +33,7 @@ namespace EEC.WebApp.MVC
 
             services.AddMVcConfiguration(Configuration);
 
-            services.RegistrarServices();
+            services.RegistrarServices(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace EEC.Identidade.API.Extensions
+namespace EEC.WebApi.Core.Identidade
 {
     public class AppSettings
     {
@@ -11,6 +10,5 @@ namespace EEC.Identidade.API.Extensions
         public int ExpiracaoHoras { get; set; }
         public string Emissor { get; set; }
         public string ValidoEm { get; set; }
-         
     }
 }

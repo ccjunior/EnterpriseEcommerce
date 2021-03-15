@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using EEC.WebApi.Core.Identidade;
 
 namespace EEC.Identidade.API.Controllers
 {
