@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\buiding blocks\EEC.Core\EEC.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="Views\Identidade\Registro.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

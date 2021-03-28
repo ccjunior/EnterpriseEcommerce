@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-namespace EEC.Catalogo.API.Configuration
+
+namespace EEC.Clientes.API.Configuration
 {
     public static class SwaggerConfig
     {
@@ -13,7 +14,7 @@ namespace EEC.Catalogo.API.Configuration
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Econmmerce Enterprise Catalogo API",
+                    Title = "Econmmerce Enterprise Clientes API",
                     Description = "Esta API faz parte do curso",
                     Contact = new OpenApiContact() { Name = "Carlos Junior", Email = "carlos.costajunior@hotmail.com" },
                     License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }

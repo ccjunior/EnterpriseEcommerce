@@ -1,4 +1,5 @@
 ﻿using EEC.Catalogo.API.Models;
+using EEC.WebApi.Core.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,7 +12,7 @@ namespace EEC.Catalogo.API.Controllers
 {
     [ApiController]
     [Authorize]
-    public class CatalogoController
+    public class CatalogoController :  MainController
     {
        
         private readonly IProdutoRepository _produtoRepository;
@@ -32,7 +33,7 @@ namespace EEC.Catalogo.API.Controllers
         [HttpGet("catalogo/produtos/{id}")]
         public async Task<Produto> ProdutoDetalhe(Guid id)
         {
-            throw new Exception("Erro");
+            //throw new Exception("Erro");
             return await _produtoRepository.ObterPorId(id);
         }
     }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EEC.Core.Messages;
+using System;
+using System.Collections.Generic;
 
 namespace EEC.Core.DomainObjects
 {
@@ -6,6 +8,33 @@ namespace EEC.Core.DomainObjects
     {
         public Guid Id { get; set; }
 
+        public Entity()
+        {
+            Id = Guid.NewGuid();
+        }
+
+        private List<Event> _notificacoes;
+
+        public IReadOnlyCollection<Event> Notificacoes => _notificacoes?.AsReadOnly();
+
+        public void AdicionarEvento(Event evento)
+        {
+            _notificacoes = _notificacoes ?? new List<Event>();
+            _notificacoes.Add(evento);
+        }
+
+        public void RemoverEvento(Event eventItem)
+        {
+            _notificacoes?.Remove(eventItem);
+        }
+
+        public void LimparEventos()
+        {
+            _notificacoes?.Clear();
+        }
+
+
+        #region Comparações
         public override bool Equals(object obj)
         {
             var compareTo = obj as Entity;
@@ -41,5 +70,8 @@ namespace EEC.Core.DomainObjects
         {
             return $"{GetType().Name} [Id={Id}]";
         }
+        #endregion
+
+
     }
 }

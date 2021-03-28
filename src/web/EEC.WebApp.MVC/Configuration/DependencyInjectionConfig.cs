@@ -2,6 +2,7 @@
 using EEC.WebApp.MVC.Services;
 using EEC.WebApp.MVC.Services.Handles;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
@@ -19,6 +20,9 @@ namespace EEC.WebApp.MVC.Configuration
     {
         public static void RegistrarServices(this IServiceCollection services, IConfiguration configuration)
         {
+
+            services.AddSingleton<IValidationAttributeAdapterProvider, CpfValidationAttributeAdapterProvider>();
+
             services.AddTransient<HttpClientAuthorizationDelegatingHandler>();
 
             services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
